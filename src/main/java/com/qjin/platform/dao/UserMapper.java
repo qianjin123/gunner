@@ -10,4 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 	
 	List<Map<String,Object>> queryUserList();
+	
+	void insertUser(Map<String,Object> map);
 }

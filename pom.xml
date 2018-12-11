@@ -46,7 +46,28 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.0</version>
         </dependency>
- 
+        
+        <dependency>
+		  <groupId>org.apache.activemq</groupId>
+		  <artifactId>activemq-core</artifactId>
+		  <version>5.6.0</version>
+		</dependency>
+ 	    
+ 	    <!-- 邮件功能 -->
+ 	    <dependency>  
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		
+		<!-- Activemq -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+		</dependency>
 		<!-- <dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -65,10 +86,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!--单独打包运行需注释，去掉BOOT-INF目录 用于依赖模块部署(jar中没有BOOT-INF目录和其lib子目录)-->
-				<configuration>
+				<!--不注释，去掉BOOT-INF目录 用于依赖模块部署(jar中没有BOOT-INF目录和其lib子目录)-->
+				<!-- <configuration>
 		        	<skip>true</skip>
-		    	</configuration>
+		    	</configuration> -->
 			</plugin>
 		<!-- 如果有test单元测试，打包时需要以下插件 -->
 		<!-- <plugin>  

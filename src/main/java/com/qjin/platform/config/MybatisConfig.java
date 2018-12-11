@@ -8,9 +8,11 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.mail.javamail.JavaMailSender;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
@@ -23,6 +25,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  */
 @Configuration
 @MapperScan( "com.**.dao")
+@ComponentScan("com.**")
 public class MybatisConfig {
 
     @Value("${datasource.driver-class-name}")
@@ -69,5 +72,5 @@ public class MybatisConfig {
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
         return sqlSessionFactoryBean;
     }
-
+    
 }
